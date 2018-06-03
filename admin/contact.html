@@ -1,0 +1,84 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>The Mountain Bag</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"></script>
+<script src="js/include.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
+ </head>
+<body>
+	 <div w3-include-html="header.html"></div>
+     <div class="main">
+      <div class="shop_top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+				  <div class="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.9908793742457!2d100.45126426397171!3d13.719001890368657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2983b3ccda6b9%3A0x7160b277b60e7199!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Liq4Lii4Liy4Lih!5e0!3m2!1sth!2sth!4v1508255543042" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px"></a></small>
+				  </div>
+				</div>
+				<div class="col-md-5">
+					<p class="m_8">มหาวิทยาลัยสยาม (อังกฤษ: Siam University; ชื่อย่อ: มส. - SU) เป็นมหาวิทยาลัยเอกชน 1 ใน 5 แห่งแรกของประเทศไทย ตั้งอยู่ที่ถนนเพชรเกษม แขวงบางหว้า เขตภาษีเจริญ กรุงเทพมหานคร ได้รับการริเริ่มขึ้นในปี พ.ศ. 2508 จาก "โรงเรียนเทคโนโลยีสยาม" และได้สถาปนาอย่างเป็นทางการเมื่อ พ.ศ. 2516[1] โดยอาจารย์ ดร.ณรงค์ มงคลวนิช ใช้ชื่อเดิมว่า "วิทยาลัยเทคนิคสยาม" ต่อมา เปลี่ยนชื่อเป็น "มหาวิทยาลัยเทคนิคสยาม" และ "มหาวิทยาลัยสยาม" ตามลำดับ มหาวิทยาลัยสยามนับได้ว่าเป็นมหาวิทยาลัยเอกชนที่มีขนาดใหญ่ที่สุดและเก่าแก่ที่สุดในย่านฝั่งธนบุรี อธิการบดีคนปัจจุบันคือ ดร.พรชัย มงคลวนิช</p>
+					<div class="address">
+				                <p>38 ถนน เพชรเกษม แขวง บางหว้า </p>
+						   		<p>เขต ภาษีเจริญ กรุงเทพมหานคร 10160</p>
+						   		<p>ประเทศไทย</p>
+				   		<p>Phone: 02 867 8088</p>
+				   		<p>Fax: 0-2457-3982, 0-2467-3174 </p>
+				 	 	<p>Email: <span>infosu@siam.edu</span></p>
+				   		<p>Follow on: <a href="https://www.facebook.com/SiamUniversityBangkok/">Facebook</a></p>
+				   </div>
+				</div>
+			</div>
+			
+	     </div>
+	   </div>
+	  </div>
+	   <div w3-include-html="footer.html"></div>
+<script>
+w3.includeHTML();
+</script>
+</body>	
+</html>

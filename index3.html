@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title> SIGNIN WITH FACEBOOK </title>
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId   : '151912162083124',
+                    cookie  : true,
+                    xfbml   : true,
+                    version : 'v2.10'
+                });
+                FB.AppEvents.logPageView();   
+            };
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+		<style>
+    button { color: #FFF; background-color: dodgerblue; border: none; padding: 10px; }
+    button:hover { cursor: pointer; }
+</style>
+    </head>
+    <body>
+       <div id="content"> 
+    <!-- Content --> 
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button>
+	<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+  
+</div>
+</div>
+
+<script type="text/javascript">
+    /* Codding */
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            if (response.status === "connected") {
+                alert('เข้าสู่ระบบด้วย Facebook สำเร็จ');
+				document.location.reload();
+            } else {
+                alert('เข้าสู่ระบบด้วย Facebook ไม่สำเร็จ');
+				document.location.reload();
+            }
+        });
+    }
+	
+    setTimeout(function() {
+        FB.getLoginStatus(function(response) {
+            if (response.status === "connected") {
+                content.innerHTML = '<button onClick="logoutFacebook();"> Signout With Facebook </button>';
+            }
+        });
+    }, 1000); // ทำงานอัตโนมัติหลังเวลาผ่านไป 1 วินาที
+
+    function logoutFacebook() {
+        FB.logout(function(response) {
+            document.location.reload(); // reload หน้าเว็บใหม่ 1 ครั้ง
+        });
+    }
+</script>
+    </body>
+</html>
